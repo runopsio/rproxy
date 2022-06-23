@@ -17,7 +17,6 @@ jobs:
         with:
           repository: 'runopsio/runops-proxy'
           ssh-key: ${{ secrets.GH_SSH_KEY }}
-          path: ./rproxy
 
       - uses: actions/setup-go@v3
         with:
@@ -31,7 +30,7 @@ jobs:
         with:
           distribution: goreleaser
           version: latest
-          args: release --rm-dist
+          args: release --rm-dist --config ../.goreleaser.yaml
           workdir: 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
