@@ -24,6 +24,11 @@ builds:
 archives:
   - replacements:
       amd64: x86_64
+dockers:
+  - dockerfile: Dockerfile
+    image_templates:
+    - "runops/rproxy:{{ .Tag }}"
+    - "runops/rproxy:latest"
 checksum:
   name_template: 'checksums.txt'
 snapshot:
