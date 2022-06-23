@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: 'git@github.com:runopsio/runops-proxy.git'
+          repository: 'runopsio/runops-proxy'
           ssh-key: ${{ secrets.GH_SSH_KEY }}
 
       - uses: actions/setup-go@v3
