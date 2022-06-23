@@ -15,6 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
           repository: 'runopsio/runops-proxy'
           ssh-key: ${{ secrets.GH_SSH_KEY }}
           path: ./rproxy
@@ -31,7 +32,7 @@ jobs:
         with:
           distribution: goreleaser
           version: latest
-          args: release --rm-dist --config ../.goreleaser.yaml
+          args: release --rm-dist --config .goreleaser.yaml
           workdir: ./rproxy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
