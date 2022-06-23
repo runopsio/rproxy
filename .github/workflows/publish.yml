@@ -1,4 +1,4 @@
-name: Generate a client release on GitHub/Dockerhub
+name: Publish Release
 
 on:
   push:
