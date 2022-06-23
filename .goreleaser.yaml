@@ -23,6 +23,9 @@ builds:
     - -X github.com/runopsio/runops-proxy/internal/version.buildDate={{ .Date }}
 archives:
   - replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
       amd64: x86_64
 dockers:
   - dockerfile: Dockerfile
