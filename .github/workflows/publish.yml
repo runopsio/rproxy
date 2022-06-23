@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: 'https://github.com/runopsio/runops-proxy.git'
+          repository: 'git@github.com:runopsio/runops-proxy.git'
           token: ${{ secrets.GH_PAT }}
 
       - uses: actions/setup-go@v3
