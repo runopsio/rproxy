@@ -5,20 +5,20 @@
 class Rproxy < Formula
   desc "Runops Proxy forwards remote tcp connections locally."
   homepage "https://github.com/runopsio/rproxy"
-  version "0.0.31"
+  version "0.0.32"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/runopsio/rproxy/releases/download/0.0.31/rproxy_0.0.31_Darwin_arm64.tar.gz"
-      sha256 "a427c8c5b572644d393870719fdbf7788bd8faf31199450171c5d02b18bf8292"
+    if Hardware::CPU.intel?
+      url "https://github.com/runopsio/rproxy/releases/download/0.0.32/rproxy_0.0.32_Darwin_x86_64.tar.gz"
+      sha256 "9520421acbb3cd0655da57273a8d87053a6f8cba66f01c4d8559e2accf0110d4"
 
       def install
         bin.install "rproxy"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/runopsio/rproxy/releases/download/0.0.31/rproxy_0.0.31_Darwin_x86_64.tar.gz"
-      sha256 "3f29a593ae213e4687ba8010f11ccaddcd7225627dd267d16790fb3f5d7c5702"
+    if Hardware::CPU.arm?
+      url "https://github.com/runopsio/rproxy/releases/download/0.0.32/rproxy_0.0.32_Darwin_arm64.tar.gz"
+      sha256 "3a702f9dee9d1557ec972b5a966d4b5ea4791dda0781d8de81b9a31a336166c1"
 
       def install
         bin.install "rproxy"
@@ -27,17 +27,17 @@ class Rproxy < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/runopsio/rproxy/releases/download/0.0.31/rproxy_0.0.31_Linux_x86_64.tar.gz"
-      sha256 "070d5a6bcc5ec7b3072a6db2b5d0772f20d20e95763d1cbf3509e80af498929a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/runopsio/rproxy/releases/download/0.0.32/rproxy_0.0.32_Linux_arm64.tar.gz"
+      sha256 "03ff51bf8a3688698c124ab97d90a8892411f86731bc805f088f8eb3ba1d7aab"
 
       def install
         bin.install "rproxy"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/runopsio/rproxy/releases/download/0.0.31/rproxy_0.0.31_Linux_arm64.tar.gz"
-      sha256 "debb3339a50cbf9dc0d3c69635e096989d7e7007b49c2fc66477f8b1d9ffffd0"
+    if Hardware::CPU.intel?
+      url "https://github.com/runopsio/rproxy/releases/download/0.0.32/rproxy_0.0.32_Linux_x86_64.tar.gz"
+      sha256 "f0569dcd897c15ae66814fd0bd66dbfee7ff80a713c549fe63cb46379d8192ec"
 
       def install
         bin.install "rproxy"
