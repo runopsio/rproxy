@@ -5,20 +5,20 @@
 class Rproxy < Formula
   desc "Runops Proxy forwards remote tcp connections locally."
   homepage "https://github.com/runopsio/rproxy"
-  version "0.0.35"
+  version "0.1.4"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/runopsio/rproxy/releases/download/0.0.35/rproxy_0.0.35_Darwin_x86_64.tar.gz"
-      sha256 "834056bb8fb9bdb5efb548839eab904e4da7ebb73cf236a9e1fba99ca5f162a2"
+      url "https://github.com/runopsio/rproxy/releases/download/0.1.4/rproxy_0.1.4_Darwin_x86_64.tar.gz"
+      sha256 "f8092e2543fcbce44d6a93db111f065ab6ab5f7dbe8ef5c9e1f4922446b77442"
 
       def install
         bin.install "rproxy"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/runopsio/rproxy/releases/download/0.0.35/rproxy_0.0.35_Darwin_arm64.tar.gz"
-      sha256 "a21042e4d8b278be928401f89c92ef2c94e707680ab1a8a0c47a74fc51b0ae39"
+      url "https://github.com/runopsio/rproxy/releases/download/0.1.4/rproxy_0.1.4_Darwin_arm64.tar.gz"
+      sha256 "8b8c52b1a520e9b316a23a8f495d43a7c9209d40953feac3cd68474e9aa3cd41"
 
       def install
         bin.install "rproxy"
@@ -28,16 +28,16 @@ class Rproxy < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/runopsio/rproxy/releases/download/0.0.35/rproxy_0.0.35_Linux_arm64.tar.gz"
-      sha256 "f5fb015c60f04d7db9f5296c01d90a4bd4794bb209254847d770f226bdd89326"
+      url "https://github.com/runopsio/rproxy/releases/download/0.1.4/rproxy_0.1.4_Linux_arm64.tar.gz"
+      sha256 "4c05690422b6527c3942a70596d70ba27221a36f739b7d0409639312d0d3f66c"
 
       def install
         bin.install "rproxy"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/runopsio/rproxy/releases/download/0.0.35/rproxy_0.0.35_Linux_x86_64.tar.gz"
-      sha256 "b2dd354016fc92669cbea4322730e8d87082d8b370f8ea0a0c1c8e4fd8baf3fd"
+      url "https://github.com/runopsio/rproxy/releases/download/0.1.4/rproxy_0.1.4_Linux_x86_64.tar.gz"
+      sha256 "cc9bd0b9911f47d223cc40730ecc2d0081bbaaec5b824bfc54e4e1c028dd0763"
 
       def install
         bin.install "rproxy"
