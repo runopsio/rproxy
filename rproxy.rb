@@ -5,20 +5,20 @@
 class Rproxy < Formula
   desc "Runops Proxy forwards remote tcp connections locally."
   homepage "https://github.com/runopsio/rproxy"
-  version "0.1.5"
+  version "0.2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/runopsio/rproxy/releases/download/0.1.5/rproxy_0.1.5_Darwin_arm64.tar.gz"
-      sha256 "b88c17f07882bc96a59eb7adfbafba299ef810c28fdb7a2cd3392457f2c95fdd"
+    if Hardware::CPU.intel?
+      url "https://github.com/runopsio/rproxy/releases/download/0.2.0/rproxy_0.2.0_Darwin_x86_64.tar.gz"
+      sha256 "ab5ad9dc2a65b2d89cdf4fc47058574ba3282ab956dd1b7bce044733fa532a01"
 
       def install
         bin.install "rproxy"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/runopsio/rproxy/releases/download/0.1.5/rproxy_0.1.5_Darwin_x86_64.tar.gz"
-      sha256 "2ed08b604f0e915c8a80fb9b9fade4d7fb643a0a006c4103281ad9a9dcaf7ee7"
+    if Hardware::CPU.arm?
+      url "https://github.com/runopsio/rproxy/releases/download/0.2.0/rproxy_0.2.0_Darwin_arm64.tar.gz"
+      sha256 "8b44e92ae43210e0119ffba0b4b4bf64c44ae2880d83ba694e39abd1a0f71e40"
 
       def install
         bin.install "rproxy"
@@ -28,16 +28,16 @@ class Rproxy < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/runopsio/rproxy/releases/download/0.1.5/rproxy_0.1.5_Linux_arm64.tar.gz"
-      sha256 "717f54844c8f5af4fc8362daf0cd6435b6c655e3325f44b7a37ae133921ea84c"
+      url "https://github.com/runopsio/rproxy/releases/download/0.2.0/rproxy_0.2.0_Linux_arm64.tar.gz"
+      sha256 "1a8bf4002bcacae7279c5b5fdd7ae512988440952404c8c92c1ba0a856c5a4c7"
 
       def install
         bin.install "rproxy"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/runopsio/rproxy/releases/download/0.1.5/rproxy_0.1.5_Linux_x86_64.tar.gz"
-      sha256 "2c128d476e466d816abce33d461290fea081d680e916591c5cef362cdb13ec1f"
+      url "https://github.com/runopsio/rproxy/releases/download/0.2.0/rproxy_0.2.0_Linux_x86_64.tar.gz"
+      sha256 "2569191a6d2371b8492335b0673c425767848f21db7e2d9cd2bef0e08426d44e"
 
       def install
         bin.install "rproxy"
