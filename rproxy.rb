@@ -5,20 +5,20 @@
 class Rproxy < Formula
   desc "Runops Proxy forwards remote tcp connections locally."
   homepage "https://github.com/runopsio/rproxy"
-  version "0.2.2"
+  version "0.2.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/runopsio/rproxy/releases/download/0.2.2/rproxy_0.2.2_Darwin_arm64.tar.gz"
-      sha256 "f6b95836ae477df3d67c7003ee70ae82f7a7dbe0af9903a5dffcc5f7e2f5cd7b"
+      url "https://github.com/runopsio/rproxy/releases/download/0.2.3/rproxy_0.2.3_Darwin_arm64.tar.gz"
+      sha256 "542f9e148e4593ddb3a1ce334093189a19d28fa33024535bca95fc64a97dee75"
 
       def install
         bin.install "rproxy"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/runopsio/rproxy/releases/download/0.2.2/rproxy_0.2.2_Darwin_x86_64.tar.gz"
-      sha256 "5ba1f070d4eda402555cb7d211fd1c71902402ca70c1c0b1aeabfdb2f5269395"
+      url "https://github.com/runopsio/rproxy/releases/download/0.2.3/rproxy_0.2.3_Darwin_x86_64.tar.gz"
+      sha256 "8563045a757f4362041a89b4ada9d774204b7ee91937dd08925897efd54efeec"
 
       def install
         bin.install "rproxy"
@@ -27,17 +27,17 @@ class Rproxy < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/runopsio/rproxy/releases/download/0.2.2/rproxy_0.2.2_Linux_x86_64.tar.gz"
-      sha256 "a8867c04a0af92f71f190496ffe69b7ffecde37332704abe10145419c87300fd"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/runopsio/rproxy/releases/download/0.2.3/rproxy_0.2.3_Linux_arm64.tar.gz"
+      sha256 "15121d56ff1980ef4314c0eb79d685ea8a0453494baaffecbf21e6c872d67aa2"
 
       def install
         bin.install "rproxy"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/runopsio/rproxy/releases/download/0.2.2/rproxy_0.2.2_Linux_arm64.tar.gz"
-      sha256 "98219da09990423ed8b6652aefe232870e3b648d45129272251a07fbd1463368"
+    if Hardware::CPU.intel?
+      url "https://github.com/runopsio/rproxy/releases/download/0.2.3/rproxy_0.2.3_Linux_x86_64.tar.gz"
+      sha256 "1d254e932d2173c5fc62a78e68904b3c0144bd5472142945246f3cbd52a128d9"
 
       def install
         bin.install "rproxy"
